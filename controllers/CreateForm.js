@@ -6,7 +6,7 @@ exports.CreateForm = async (req, res) => {
         const { image, title, description, steps, mode,status, theme } = req.body || {};
         // console.log(req.body)
         const slug = uuidv4();
-        const publicUrl = `http://localhost:3000/public/${slug}`;
+        const publicUrl = `https://dev-form-builder-2.vercel.app/public/${slug}`;
         const newFormData = await Form.create({
             //    image,title, description,steps,mode,theme
             image,
