@@ -76,7 +76,7 @@ exports.UpdateForm = async (req, res) => {
     // if (!existingForm.PublicUrl) {
       const newSlug = uuidv4();
       updateData.slug = newSlug;
-      updateData.PublicUrl = `http://localhost:3000/public/${formId}/${newSlug}`;
+      updateData.PublicUrl = `https://dev-form-builder-2.vercel.app/public/${formId}/${newSlug}`;
     // }
 
     const updatedForm = await Form.findByIdAndUpdate(formId, updateData, {
