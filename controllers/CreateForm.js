@@ -6,7 +6,7 @@ exports.CreateForm = async (req, res) => {
         const { image, title, description, steps, mode,status, theme } = req.body || {};
         // console.log(req.body)
         const slug = uuidv4();
-        const publicUrl = `https://dev-form-builder-2.vercel.app/public/${slug}`;
+        const publicUrl = `https://dev-form-builder-2.vercel.app/form/${slug}`;
         const newFormData = await Form.create({
             //    image,title, description,steps,mode,theme
             image,
@@ -76,7 +76,7 @@ exports.UpdateForm = async (req, res) => {
     // if (!existingForm.PublicUrl) {
       const newSlug = uuidv4();
       updateData.slug = newSlug;
-      updateData.PublicUrl = `https://dev-form-builder-2.vercel.app/public/${formId}/${newSlug}`;
+      updateData.PublicUrl = `https://dev-form-builder-2.vercel.app/form/${formId}/${newSlug}`;
     // }
 
     const updatedForm = await Form.findByIdAndUpdate(formId, updateData, {
