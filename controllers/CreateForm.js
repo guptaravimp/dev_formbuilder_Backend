@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require("uuid");
 exports.CreateForm = async (req, res) => {
     try {
 
-        const { image, title, description, steps, mode, theme } = req.body;
+        const { image, title, description, steps, mode,status, theme } = req.body || {};
         // console.log(req.body)
         const slug = uuidv4();
         const publicUrl = `http://localhost:3000/public/${slug}`;
@@ -15,6 +15,7 @@ exports.CreateForm = async (req, res) => {
             steps,
             mode,
             theme,
+            status,
             slug,
             PublicUrl: publicUrl,
         })
