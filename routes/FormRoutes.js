@@ -6,7 +6,7 @@ const { CreateSteps, updateStep } = require('../controllers/CreateSteps')
 const {FileUpload }= require('../controllers/fileUpload');
 const { SubmitResponse } = require('../controllers/SubmitResponse')
 const { fetchResponse } = require('../controllers/fetchResponse')
-
+const { GetAllForms } = require('../controllers/GetAllForms')
 router.post("/createform",CreateForm)
 router.put("/updateform",UpdateForm)
 router.post("/getformData",GetFormData)
@@ -15,7 +15,7 @@ router.post("/createStep",CreateSteps)
 router.get("/print",printRoute)
 router.post("/fileUpload",FileUpload);
 router.get("/fetchresponse",fetchResponse)
-
+router.get("/getAllforms",GetAllForms)
 router.post("/submitResponse",SubmitResponse)
 
 module.exports = router;
